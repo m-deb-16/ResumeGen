@@ -1,0 +1,237 @@
+/* Editor Page Styles */
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.editor-header .section-title {
+  margin-bottom: 0;
+}
+
+.editor-header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Tabs */
+.editor-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.editor-tab {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: none;
+  border-right: 2px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.editor-tab:last-child {
+  border-right: none;
+}
+
+.editor-tab:hover {
+  color: var(--text);
+}
+
+.editor-tab.active {
+  background: var(--accent);
+  color: #191A23;
+}
+
+/* Editor Section */
+.editor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.editor-item {
+  cursor: default;
+}
+
+.editor-item:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+.editor-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.editor-item-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Form rows */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Points */
+.points-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.point-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.point-row input {
+  flex: 1;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.point-row input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(185, 255, 102, 0.2);
+}
+
+/* Inline Enhance Button */
+.input-with-enhance {
+  position: relative;
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.input-with-enhance input,
+.input-with-enhance textarea {
+  flex: 1;
+}
+
+.enhance-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  margin-top: 2px;
+}
+
+.enhance-btn:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 2px 2px 0 var(--border);
+  transform: scale(1.1);
+}
+
+.enhance-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.enhance-btn.enhancing {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.enhance-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--text-secondary);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: toastSlideIn 0.3s ease-out;
+}
+
+.toast-success {
+  background: #22c55e;
+  border: 2px solid #16a34a;
+}
+
+.toast-error {
+  background: #ef4444;
+  border: 2px solid #dc2626;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-tabs {
+    width: 100%;
+  }
+
+  .editor-tab {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}

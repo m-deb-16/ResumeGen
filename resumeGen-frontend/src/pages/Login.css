@@ -1,0 +1,78 @@
+/* Login Page Styles */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 77, 77, 0.08);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--danger);
+}
+
+.login-success {
+  color: #27C93F;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(39, 201, 63, 0.08);
+  border-radius: var(--radius-sm);
+  border: 1px solid #27C93F;
+}
+
+.login-switch {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.login-switch-btn {
+  background: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-switch-btn:hover {
+  color: var(--accent-hover);
+}

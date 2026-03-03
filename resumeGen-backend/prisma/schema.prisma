@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+
+//default
+//generator client {
+//provider = "prisma-client"
+//  output   = "../generated/prisma"
+//}
+
+//datasource db {
+//  provider = "postgresql"
+//}
+
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Resume {
+  id        String      @id @default(uuid())
+  userId    String?
+  full_name String
+  phone     String?
+  email     String
+  linkedin  String?
+  github    String?
+  summary   String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime?   @default(now()) @updatedAt
+
+  education   Education[]
+  projects    Project[]
+  skills      Skill[]
+  experiences Experience[]
+}
+
+model Education {
+  id        String   @id @default(uuid())
+  institution String
+  location    String?
+  degree      String?
+  start_date  String?
+  end_date    String?
+
+  resume     Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  resumeId   String
+}
+
+model Project {
+  id          String         @id @default(uuid())
+  title       String
+  tech_stack  String?
+  duration    String?
+  description String?
+
+  resume     Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  resumeId   String
+
+  points     ProjectPoint[]
+}
+
+model ProjectPoint {
+  id        String  @id @default(uuid())
+  point     String
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId String
+}
+
+model Skill {
+  id        String  @id @default(uuid())
+  category  String?
+  items     String?
+
+  resume     Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  resumeId   String
+}
+
+model Experience {
+  id         String            @id @default(uuid())
+  role       String
+  company    String
+  location   String?
+  start_date String?
+  end_date   String?
+
+  resume     Resume            @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  resumeId   String
+
+  points     ExperiencePoint[]
+}
+
+model ExperiencePoint {
+  id           String     @id @default(uuid())
+  point        String
+
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  experienceId String
+}

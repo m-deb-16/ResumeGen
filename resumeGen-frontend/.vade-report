@@ -1,0 +1,52 @@
+# Vercel Web Analytics Implementation
+
+## Summary
+Successfully implemented Vercel Web Analytics for the ResumeGen React + Vite application.
+
+## Changes Made
+
+### 1. Installed Dependencies
+- Added `@vercel/analytics` package to the project
+- Updated `package.json` with the new dependency
+- Updated `package-lock.json` with dependency resolution
+
+### 2. Modified Files
+- **src/App.jsx**: Added Vercel Analytics integration
+  - Imported `Analytics` component from `@vercel/analytics/react`
+  - Placed `<Analytics />` component inside the `<BrowserRouter>` wrapper, after the `<Routes>` component
+  - This placement ensures analytics tracking works properly with React Router for route detection
+
+## Implementation Details
+
+The Analytics component was added to the main App component following the Vercel Web Analytics documentation for React applications. The implementation:
+
+1. **Import**: Added `import { Analytics } from "@vercel/analytics/react";` at the top of App.jsx
+2. **Placement**: Added `<Analytics />` component inside the BrowserRouter, ensuring it has access to routing context
+3. **Position**: Placed after the Routes component to ensure all routing is set up before analytics initialization
+
+## Technical Decisions
+
+- **Framework-specific package**: Used `@vercel/analytics/react` instead of the generic package for better React integration
+- **Component placement**: Positioned inside BrowserRouter to enable automatic route tracking with React Router
+- **No route tracking note**: The documentation mentions that plain React implementation doesn't have automatic route support, but with React Router integration, route changes will be tracked
+
+## Build Verification
+
+✅ Build completed successfully with `npm run build`
+✅ All dependencies installed properly
+✅ No new linting errors introduced (1 pre-existing error in AuthContext.jsx unrelated to this change)
+
+## Next Steps for Users
+
+After deploying to Vercel:
+1. Enable Web Analytics in the Vercel dashboard (Project → Analytics tab → Enable)
+2. Deploy the app using `vercel deploy` or via Git integration
+3. Verify analytics by checking for `/_vercel/insights/view` requests in browser Network tab
+4. View analytics data in the Vercel dashboard under the Analytics tab
+
+## Notes
+
+- The Analytics component will automatically track page views and visitor data
+- Route changes will be tracked automatically due to React Router integration
+- Analytics data will only be visible after deployment to Vercel
+- The implementation follows Vercel's official documentation for React applications

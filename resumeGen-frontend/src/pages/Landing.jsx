@@ -58,7 +58,7 @@ export default function Landing() {
             <div className="feature-icon">📄</div>
             <h3>LaTeX-Quality PDFs</h3>
             <p className="text-secondary">
-              Professional resumes compiled with real LaTeX. No templates — real
+              Professional resumes compiled with real LaTeX. No templates, real
               typesetting.
             </p>
           </div>
@@ -79,11 +79,10 @@ export default function Landing() {
             </p>
           </div>
           <div className="card feature-card">
-            <div className="feature-icon">🔒</div>
-            <h3>Secure & Private</h3>
+            <div className="feature-icon">⚡</div>
+            <h3>Fast & Simple </h3>
             <p className="text-secondary">
-              Your data is yours. Secured with Supabase Auth and scoped to your
-              account only.
+              Create, edit, and export resumes in minutes with a clean, distraction-free interface.
             </p>
           </div>
         </div>
@@ -109,7 +108,7 @@ export default function Landing() {
             <div className="step-content">
               <h3>AI enhances your content</h3>
               <p className="text-secondary">
-                Our AI rewrites bullet points and optimizes for ATS.
+                AI integration helps rewrite bullet points and optimizes for ATS.
               </p>
             </div>
           </div>
@@ -134,7 +133,7 @@ export default function Landing() {
             ResumeGen
           </span>
           <p className="text-secondary" style={{ fontSize: "0.85rem" }}>
-            Built with ❤️ and too much chai
+            Built during late nights and poor sleep decisions.
           </p>
         </div>
       </footer>

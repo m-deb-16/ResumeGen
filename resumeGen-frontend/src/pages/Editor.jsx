@@ -434,7 +434,7 @@ export default function Editor() {
               <input
                 value={resume.phone || ""}
                 onChange={(e) => updateField("phone", e.target.value)}
-                placeholder="+1 234 567 890"
+                placeholder="+91 9876543210 "
               />
             </div>
             <div className="form-group">

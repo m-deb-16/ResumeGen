@@ -7,8 +7,6 @@ A full-stack web application for creating, managing, and exporting professional 
 ### Resume Builder
 
 - **Interactive Editor** — Create and edit resumes with sections for personal info, education, experience, projects, and skills
-- **Real-time Trimming** — Automatically trims whitespace from all inputs on save
-- **Toast Notifications** — Visual feedback on save success or failure
 
 ### Export Options
 
@@ -21,17 +19,9 @@ A full-stack web application for creating, managing, and exporting professional 
 - **🌕 Minimal** — Clean, editorial design with typographic focus and subtle animations
 - **🌑 Dark Glass** — Modern glassmorphism aesthetic with gradient accents and floating nav
 
-Both themes feature:
-
-- Dynamic section numbering that adjusts when sections are missing
-- Conditional rendering — empty sections are fully hidden (no blank space)
-- Responsive layouts for all screen sizes
-- Section-aware navigation bar
-- Scroll-triggered reveal animations
-
 ### AI Enhancement
 
-- **Full Resume Enhancement** — AI-powered rewriting of resume bullet points tailored to a job description
+- **Full Resume Enhancement** — AI-powered rewriting of resume bullet points
 - **Field-level Enhancement** — Enhance individual text fields inline
 
 ### Dashboard
@@ -48,7 +38,7 @@ Both themes feature:
 | **Backend**          | Node.js, Express                       |
 | **Database**         | PostgreSQL (Supabase)                  |
 | **ORM**              | Prisma                                 |
-| **Auth**             | Supabase Auth + JWT middleware         |
+| **Auth**             | Supabase Auth                          |
 | **PDF Generation**   | LaTeX via texlive.net API              |
 | **Portfolio Bundle** | Archiver (ZIP), Vite + React templates |
 

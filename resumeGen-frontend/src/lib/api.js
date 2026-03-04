@@ -2,7 +2,7 @@ import axios from "axios";
 import { supabase } from "./supabase";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api/resume",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api/resume",
 });
 
 // Inject auth token into every request
